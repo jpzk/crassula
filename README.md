@@ -14,11 +14,11 @@ $ python crassula.py traced.py
 traced.py content is:
 
 <pre>
-0 def foo():
-1   a = [] 
-2   for i in range(0,10):
-3       a.append(i) 
-4 foo()        
+1 def foo():
+2   a = [] 
+3   for i in range(0,10):
+4       a.append(i) 
+5 foo()        
 </pre>
 
 crassula watches the file traced.py for any modifications. If you modify traced.py the local variables with line numbers are enumerated in crassula.
@@ -28,7 +28,7 @@ traced.py: 1:
 traced.py: 2: 
 traced.py: 3: a => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] i => 9 
 traced.py: 4: a => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] i => 9 
-traced.py: 5: foo => <function foo at 0x1e96398>
+traced.py: 5: foo => function foo at 0x1e96398
 </pre>
 
 ## Hacking
