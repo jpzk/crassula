@@ -44,6 +44,7 @@ class Crassula():
         def watchdog(self, seconds):
             while(True):
                 if(os.stat(self.filename).st_mtime > self.start_time):
+                    self.run_info = {}
                     self.set_trace()
                     sys.stdout = self.NullDevice()        
                     execfile(self.filename, {}, {})
