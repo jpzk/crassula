@@ -11,6 +11,16 @@ $ cd crassula
 $ python crassula.py traced.py 
 </pre>
 
+traced.py content is:
+
+<pre>
+def foo():
+    a = [] 
+    for i in range(0,10):
+        a.append(i) 
+foo()        
+</pre>
+
 crassula watches the file traced.py for any modifications. If you modify traced.py the local variables with line numbers are enumerated in crassula.
 
 <pre>
