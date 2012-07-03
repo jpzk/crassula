@@ -14,11 +14,11 @@ $ python crassula.py traced.py
 traced.py content is:
 
 <pre>
-def foo():
-    a = [] 
-    for i in range(0,10):
-        a.append(i) 
-foo()        
+0 def foo():
+1   a = [] 
+2   for i in range(0,10):
+3       a.append(i) 
+4 foo()        
 </pre>
 
 crassula watches the file traced.py for any modifications. If you modify traced.py the local variables with line numbers are enumerated in crassula.
