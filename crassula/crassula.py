@@ -47,12 +47,16 @@ class Crassula():
                     self.run_info = {}
                     self.set_trace()
                     sys.stdout = self.NullDevice()        
-                    execfile(self.filename, {}, {})
-                    self.uninstall_trace()
-
-                    sys.stdout = self.orginal_stdout
-                    self.output()
-                    self.start_time = os.stat(self.filename).st_mtime
+                    try:
+                        execfile(self.filename, {}, {})
+                        sys.stdout = self.orginal_stdout
+                        self.output()
+                    except Exception as e:
+                        sys.stdout = self.orginal_stdout
+                        print "Exception raised: " + str(e)
+                    finally:
+                        self.uninstall_trace()
+                        self.start_time = os.stat(self.filename).st_mtime
                 else:
                     time.sleep(seconds)
 
